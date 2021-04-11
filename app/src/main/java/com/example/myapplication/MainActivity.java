@@ -29,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.container, new narouFragment(), "MainFragment");
-
 
         if (Build.VERSION.SDK_INT >= 23) {
             if(ActivityCompat.checkSelfPermission(this,

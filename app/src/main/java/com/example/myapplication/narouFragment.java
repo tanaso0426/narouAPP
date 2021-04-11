@@ -50,8 +50,7 @@ public class narouFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                HttpResponsAsync ht = new HttpResponsAsync();
-//                ht.execute();
+
 
                 FragmentManager fragmentManager = getFragmentManager();
 
@@ -60,9 +59,10 @@ public class narouFragment extends Fragment {
                             fragmentManager.beginTransaction();
 
                     ResultFragment rf = new ResultFragment();
-                    fragmentTransaction.add(R.id.container, rf,"ResultFragment");
+                    fragmentTransaction.replace(R.id.fragmentContainer, rf,"ResultFragment");
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
+
 
                 }
 

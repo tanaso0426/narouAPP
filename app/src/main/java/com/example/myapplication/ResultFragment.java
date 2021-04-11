@@ -65,26 +65,37 @@ public class ResultFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_narou,container,false);
-        ListView lvresult = (ListView)view.findViewById(R.id.lvResult);
-        List<Map<String,String>> menuList = new ArrayList<>();
-        Map<String,String> menu = new HashMap<>();
-        menu.put("name","からあげ定食");
-        menu.put("price","100円");
+        View view = inflater.inflate(R.layout.fragment_result,container,false);
+//        ListView lvResult = view.findViewById(R.id.lvResult);
 
-        menu.put("name","ひれかつ定食");
-        menu.put("price","200円");
+        HttpResponsAsync ht = new HttpResponsAsync(view,getActivity());
+        ht.execute();
 
-        menu.put("name","日替わり定食");
-        menu.put("price","300円");
-
-        String[] from = {"name","price"};
-        int[] to = {android.R.id.text1,android.R.id.text2};
-        SimpleAdapter adapter = new SimpleAdapter(getActivity(),menuList,
-                android.R.layout.simple_list_item_2,from,to);
-
-        lvresult.setAdapter(adapter);
+//        List<Map<String,String>> menuList = new ArrayList<>();
+//        Map<String,String> menu = new HashMap<>();
+//        menu.put("name","からあげ定食");
+//        menu.put("price","100円");
+//        menuList.add(menu);
+//
+//        menu = new HashMap<>();
+//        menu.put("name","ひれかつ定食");
+//        menu.put("price","200円");
+//        menuList.add(menu);
+//
+//        menu = new HashMap<>();
+//        menu.put("name","日替わり定食");
+//        menu.put("price","300円");
+//        menuList.add(menu);
+//
+//        String[] from = {"name","price"};
+//        int[] to = {android.R.id.text1,android.R.id.text2};
+//        SimpleAdapter adapter = new SimpleAdapter(getActivity(),menuList,
+//                android.R.layout.simple_list_item_2,from,to);
+//
+//        lvResult.setAdapter(adapter);
 
 
 
